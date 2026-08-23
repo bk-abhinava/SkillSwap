@@ -1,5 +1,5 @@
 import { Routes,Route } from "react-router-dom";
-
+import ProtectedRoute from "../components/common/ProtectedRoute";
 import Home from "../Pages/Home";
 import Login from "../pages/Login";
 import Signup from "../Pages/Signup";
@@ -16,10 +16,10 @@ function AppRoutes()
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/dashboard" element={<Dashboard/>}/>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/browse" element={<BrowseUsers/>}/>
-            <Route path="/requests" element={<SwapRequest/>}/>
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
+            <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/>
+            <Route path="/browse" element={<ProtectedRoute><BrowseUsers/></ProtectedRoute>}/>
+            <Route path="/requests" element={<ProtectedRoute><SwapRequest/></ProtectedRoute>}/>
             <Route path="*" element={<NotFound/>}/>
 
            

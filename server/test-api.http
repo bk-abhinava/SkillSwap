@@ -1,0 +1,7 @@
+PUT http://localhost:5000/api/requests/6a87f3c58e3d8aedf0bc1d98
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTgxNTM3ZjIwZmFjZThkNmVlZDY2OTciLCJpYXQiOjE3ODcyOTQxNDMsImV4cCI6MTc4Nzg5ODk0M30.ZeDxLDeLCyJAszvyvXhnHMHJOW-hk7H6gZAVuBCCynM
+Content-Type: application/json
+
+{
+  "status": "rejected"
+}
