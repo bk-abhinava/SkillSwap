@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/users";
+const API_URL = "https://skillswap-wseh.onrender.com/api/users";
 
 export const updateProfile = async (profileData) => {
   const token = localStorage.getItem("token");
