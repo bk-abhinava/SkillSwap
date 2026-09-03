@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/requests";
+const API_URL = "https://skillswap-wseh.onrender.com/api/requests";
 
 export const sendSwapRequest = async (receiverId) => {
   const token = localStorage.getItem("token");
