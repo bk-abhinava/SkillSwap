@@ -1,13 +1,13 @@
 import { Routes,Route } from "react-router-dom";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 import Home from "../Pages/Home";
-import Login from "../pages/Login";
+import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import Dashboard from "../Pages/Dashboard";
 import Profile from "../Pages/Profile";
-import BrowseUsers from "../pages/BrowseUsers";
-import SwapRequest from "../pages/SwapRequests";
-import NotFound from "../pages/NotFound";
+import BrowseUsers from "../Pages/BrowseUsers";
+import SwapRequest from "../Pages/SwapRequests";
+import NotFound from "../Pages/NotFound";
 
 function AppRoutes()
 {
