@@ -69,10 +69,8 @@ function Login() {
 
             
 
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.user));
-
-            navigate("/dashboard");
+            login(data.user, data.token);
+navigate("/dashboard");
 
         } catch (error) {
             setServerError(error.message);
