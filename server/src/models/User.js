@@ -15,9 +15,16 @@ const mongoose = require("mongoose");
         },
          password:{
             type: String,
-            required:true,
+            required:function(){
+                return !this.googleId;
+            },
             minlength:6,
         },
+        googleId: {
+  type: String,
+  sparse: true,
+  unique: true,
+},
          bio:{
             type: String,
             default:"",

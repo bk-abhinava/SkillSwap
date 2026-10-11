@@ -54,3 +54,24 @@ export const getCurrentUser = async () => {
 
   return data;
 };
+
+export const googleLoginUser = async (credential) => {
+  const response = await fetch(
+    "https://skillswap-wseh.onrender.com/api/auth/google",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ credential }),
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Google login failed");
+  }
+
+  return data;
+};

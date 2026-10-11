@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "../services/authService";
+import { GoogleLogin } from "@react-oauth/google";
+import { loginUser, googleLoginUser } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
 
 
@@ -76,6 +77,21 @@ navigate("/dashboard");
             setServerError(error.message);
         }
     };
+
+    const handleGoogleSuccess = async (credentialResponse) => {
+    setServerError("");
+
+    try {
+        const data = await googleLoginUser(
+            credentialResponse.credential
+        );
+
+        login(data.user, data.token);
+        navigate("/dashboard");
+    } catch (error) {
+        setServerError(error.message);
+    }
+};
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-6 py-12">
@@ -155,6 +171,23 @@ navigate("/dashboard");
                         Sign up
                     </Link>
                 </p>
+
+                <div className="mt-5">
+    <div className="flex items-center gap-3 mb-5">
+        <div className="flex-1 border-t border-gray-200"></div>
+        <span className="text-sm text-gray-500">OR</span>
+        <div className="flex-1 border-t border-gray-200"></div>
+    </div>
+
+    <div className="flex justify-center">
+        <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={() => {
+                setServerError("Google login failed. Please try again.");
+            }}
+        />
+    </div>
+</div>
             </div>
         </div>
 
